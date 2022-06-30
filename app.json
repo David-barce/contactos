@@ -21,6 +21,7 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": ["CONTACTS", "WRITE_CONTACTS"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
