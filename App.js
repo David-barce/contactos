@@ -29,11 +29,8 @@ const App = () => {
 
       const { status } = await Contacts.requestPermissionsAsync();
         if (status === 'granted') {
-          const { data } = await Contacts.getContactsAsync({
-            fields: [Contacts.Fields.PhoneNumbers],
-          });
-          setContactos(data);
-          console.log("permiso concedido" + JSON.stringify(data));
+          
+          //console.log("permiso concedido" + JSON.stringify(data));
           Alert.alert("permiso concedido", "Exito");
         }
         else
@@ -66,10 +63,14 @@ const App = () => {
         console.log("se agrego el contacto");
         Alert.alert("se agrego el contacto", "Exito");
 
-        getContactos();
+        //getContactos();
         setApellido('');
         setNombre('');
         setTelefono('');
+        const { data } = await Contacts.getContactsAsync({
+          fields: [Contacts.Fields.PhoneNumbers],
+        });
+        setContactos(data);
       }
     }
 
